@@ -51,5 +51,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="CS245LA08" level="application" />
   </component>
 </module>
