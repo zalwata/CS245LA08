@@ -1,5 +1,3 @@
-package UndirectedGraph;
-
 /**
  * - The goal of this assignment is to practice designing solutions using data structures from this course.
  *
@@ -20,4 +18,11 @@ package UndirectedGraph;
  */
 
 public class FindTheJudge {
+
+
+    public static void main(String[] args) {
+
+        System.out.println("works!");
+
+    }
 }
