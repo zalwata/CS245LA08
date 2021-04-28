@@ -67,10 +67,17 @@ public class Judge {
 
     public static void main(String[] args)
     {
-        Judge judge = new Judge(2);
+        Judge judge = new Judge(3);
         judge.print();
+//        System.out.println("-----------------------------------------------------------------------------------------");
+//        System.out.println("Example 1");
+//        judge.trust = judge.aTrustsB(1,2);
+//        judge.print();
+//        System.out.println("label of the town judge : " + judge.findJudge(N, judge.trust));
         System.out.println("-----------------------------------------------------------------------------------------");
-        judge.trust = judge.aTrustsB(1,2);
+        System.out.println("Example 2");
+        judge.trust = judge.aTrustsB(1,3);
+        judge.trust = judge.aTrustsB(2,3);
         judge.print();
         System.out.println("label of the town judge : " + judge.findJudge(N, judge.trust));
 
