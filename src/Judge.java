@@ -38,8 +38,10 @@ public class Judge {
     public int findJudge(int N, int [][] trust)
     {
         int judgeNum = 0;
-        for (int i = 0; i < N ; i++) {
-            for (int j = 0; j < N ; j++) {
+        for (int i = 0; i < N ; i++)
+        {
+            for (int j = 0; j < N ; j++)
+            {
                 if(trust[i][j] == 1)
                 {
                     judgeNum = verifyJudgeCandidate(j, trust) + 1;
@@ -51,20 +53,32 @@ public class Judge {
 
     public int verifyJudgeCandidate(int judgeCandidateNum, int [][]trust)
     {
-        int counter = 0;
+        int counter = 1;
         for(int i = 0; i < N; i++)
         {
             if(trust[i][judgeCandidateNum] == 1)
             {
                 counter++;
-                if(counter == N)
+                if(counter == N && isJudge(judgeCandidateNum, trust))
                 {
                     return judgeCandidateNum;
                 }
             }
         }
-
         return -2;
+    }
+
+    public boolean isJudge(int judgeCandidateNum, int [][]trust)
+    {
+        for(int j = 0; j < N; j++)
+        {
+            if(trust[judgeCandidateNum][j] == 1)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public void print()
@@ -85,24 +99,33 @@ public class Judge {
 
     public static void main(String[] args)
     {
-        Judge judge = new Judge(3);
-        judge.print();
-//        System.out.println("-----------------------------------------------------------------------------------------");
-//        System.out.println("Example 1");
-//        judge.trust = judge.aTrustsB(1,2);
+//        Judge judge = new Judge(2);
 //        judge.print();
-//        System.out.println("label of the town judge : " + judge.findJudge(N, judge.trust));
+////        System.out.println("-----------------------------------------------------------------------------------------");
+////        System.out.println("Example 1");
+////        judge.trust = judge.aTrustsB(1,2);
+////        judge.print();
+////        System.out.println("label of the town judge : " + judge.findJudge(N, judge.trust));
 //        System.out.println("-----------------------------------------------------------------------------------------");
 //        System.out.println("Example 2");
+//        Judge judge = new Judge(3);
 //        judge.trust = judge.aTrustsB(1,3);
 //        judge.trust = judge.aTrustsB(2,3);
 //        judge.print();
 //        System.out.println("label of the town judge : " + judge.findJudge(N, judge.trust));
+//        System.out.println("-----------------------------------------------------------------------------------------");
+//        System.out.println("Example 3");
+//        Judge judge = new Judge(3);
+//        judge.trust = judge.aTrustsB(1,3);
+//        judge.trust = judge.aTrustsB(2,3);
+//        judge.trust = judge.aTrustsB(3,1);
+//        judge.print();
+//        System.out.println("label of the town judge : " + judge.findJudge(N, judge.trust));
         System.out.println("-----------------------------------------------------------------------------------------");
-        System.out.println("Example 3");
-        judge.trust = judge.aTrustsB(1,3);
+        System.out.println("Example 4");
+        Judge judge = new Judge(3);
+        judge.trust = judge.aTrustsB(1,2);
         judge.trust = judge.aTrustsB(2,3);
-        judge.trust = judge.aTrustsB(3,1);
         judge.print();
         System.out.println("label of the town judge : " + judge.findJudge(N, judge.trust));
 
