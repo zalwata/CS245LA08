@@ -121,11 +121,21 @@ public class Judge {
 //        judge.trust = judge.aTrustsB(3,1);
 //        judge.print();
 //        System.out.println("label of the town judge : " + judge.findJudge(N, judge.trust));
+//        System.out.println("-----------------------------------------------------------------------------------------");
+//        System.out.println("Example 4");
+//        Judge judge = new Judge(3);
+//        judge.trust = judge.aTrustsB(1,2);
+//        judge.trust = judge.aTrustsB(2,3);
+//        judge.print();
+//        System.out.println("label of the town judge : " + judge.findJudge(N, judge.trust));
         System.out.println("-----------------------------------------------------------------------------------------");
-        System.out.println("Example 4");
-        Judge judge = new Judge(3);
-        judge.trust = judge.aTrustsB(1,2);
+        System.out.println("Example 5");
+        Judge judge = new Judge(4);
+        judge.trust = judge.aTrustsB(1,3);
+        judge.trust = judge.aTrustsB(1,4);
         judge.trust = judge.aTrustsB(2,3);
+        judge.trust = judge.aTrustsB(2,4);
+        judge.trust = judge.aTrustsB(4,3);
         judge.print();
         System.out.println("label of the town judge : " + judge.findJudge(N, judge.trust));
 
